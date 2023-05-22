@@ -1,0 +1,155 @@
+# umma.js
+
+> Umma - a library for working with Umma Chain.
+
+[![npm version](https://badge.fury.io/js/queryzz.svg)](https://www.npmjs.com/package/queryzz)
+[![](https://data.jsdelivr.com/v1/package/npm/queryzz/badge)](https://www.jsdelivr.com/package/npm/queryzz)
+
+## Features
+
+- Full TypeScript support
+- Support all platforms
+- Easy to use
+
+## Table of Contents
+
+- [Quick start](#quick-start)
+  - [Install](#install)
+  - [Initialization](#initialization)
+- [Methods](#methods)
+{{#functions}}
+  - [{{name}}](#{{name}})
+{{/functions}}
+
+## Quick start
+
+### Install
+
+We support all platforms.
+
+#### npm
+
+For module bundlers such as Webpack or Browserify.
+
+```shell
+npm i umma
+```
+
+#### Include with &lt;script&gt;
+
+Download and install with `script`.
+
+```html
+<script src="umma.js"></script>
+```
+
+##### CDN
+
+Recommended for learning purposes, you can use the latest version:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/umma/dist/umma.js"></script>
+```
+
+Recommended for production for avoiding unexpected breakage from newer versions:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/umma@1.0.0/dist/umma.js"></script>
+```
+
+### Initialization
+
+#### ES6
+
+umma as an ES6 module.
+
+```js
+import import { LCDClient } from 'umma'
+
+
+const useClientInstance = () => {
+  return new Client({
+    "apiURL" : "http://localhost:1317",
+    "rpcURL" : "http://localhost:26657",
+    "prefix" : "umma"
+  })
+}
+```
+
+#### Node
+
+umma as a Node.js module
+
+```js
+const { Client } = require('umma');
+
+const useClientInstance = () => {
+  return new Client({
+    "apiURL" : "http://localhost:1317",
+    "rpcURL" : "http://localhost:26657",
+    "prefix" : "umma"
+  })
+}
+```
+
+#### Browser
+
+Exports a global variable called `umma`. Use it like this
+
+```html
+<script>
+  umma.Client();
+</script>
+```
+
+#### AMD
+
+umma as an AMD module. Use with Require.js, System.js, and so on.
+
+```js
+requirejs(['umma'], function(umma) {
+  umma.Client();
+});
+```
+
+## Methods
+
+{{#functions}}
+### {{name}}
+
+{{#if description}}{{description}}{{/if}}
+
+{{#if since}}
+#### Since
+- {{since}}
+{{/if}}
+
+{{#if params}}
+#### Params
+{{#each params}}
+- `{{name}}`
+  {{#if type.names}}- Type: `{{type.names}}`{{/if}}
+  {{#if description}}- Description: {{description}}{{/if}}
+{{/each}}
+{{/if}}
+
+{{#if returns}}
+#### Returns
+{{#each returns}}
+- `{{type.names}}`
+{{/each}}
+{{/if}}
+
+{{#if examples}}
+#### Example
+{{#each examples}}
+```JS
+{{{this}}}
+```
+{{/each}}
+{{/if}}
+<a href="https://github.com/umma-chain/umma-js/blob/master/src/lib/{{name}}.ts" target="_blank">Source code</a>
+* * *
+{{/functions}}
+
+&copy; Abdulaziz Kholbaev @FounderDAO
